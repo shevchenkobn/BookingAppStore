@@ -1,7 +1,6 @@
 ﻿@{
     ViewBag.Title = "Book shop";
 }
-
 <div class="container">
     <h2>Books sales off</h2>
     <table class="table table-striped">
@@ -12,11 +11,12 @@
         </tr>
         @foreach (var book in ViewBag.Books)
         {
-            <tr>
-                <td>@book.Name</td>
-                <td>@book.Author</td>
-                <td>@book.Price</td>
-            </tr>
+        <tr>
+            <td>@book.Name</td>
+            <td>@book.Author</td>
+            <td>@book.Price</td>
+            <td><a class="btn btn-success" href="Home/Buy/@book.Id"><span class="glyphicon glyphicon-shopping-cart"></span></a></td>
+        </tr>
         }
     </table>
 </div>

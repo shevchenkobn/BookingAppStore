@@ -19,6 +19,22 @@ namespace BookingAppStore.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Buy(int id)
+        {
+            ViewBag.BookId = id;
+            return View();
+        }
+
+        [HttpPost]
+        public string Buy(Purchase purchase)
+        {
+            purchase.Date = DateTime.Now;
+            db.Purchases.Add(purchase);
+            db.SaveChanges();
+            return "Thanks, " + purchase.Person + ", for buying!";
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
