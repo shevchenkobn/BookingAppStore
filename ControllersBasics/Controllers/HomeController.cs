@@ -16,6 +16,30 @@ namespace ControllersBasics.Controllers
             return View();
         }
 
+        public FilePathResult GetFile()
+        {
+            string filePath = Server.MapPath("~/Files/good_thing.pdf");
+            string fileType = "application/pdf";
+            string fileName = "you_will_never_know_the_name.pdf";
+            return File(filePath, fileType, fileName);
+        }
+
+        public FileContentResult GetBytes()
+        {
+            string filePath = Server.MapPath("~/Files/good_thing.pdf");
+            string fileType = "application/pdf";//application/octect-stream
+            string fileName = "you_will_never_know_the_name.pdf";
+            return File(System.IO.File.ReadAllBytes(filePath), fileType, fileName);
+        }
+
+        public FileStreamResult GetStream()
+        {
+            string filePath = Server.MapPath("~/Files/good_thing.pdf");
+            string fileType = "application/pdf";
+            string fileName = "you_will_never_know_the_name.pdf";
+            return File(new System.IO.FileStream(filePath, System.IO.FileMode.Open), fileType, fileName);
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

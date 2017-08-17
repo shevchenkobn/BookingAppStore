@@ -193,6 +193,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\" />
+    <Folder Include="Files\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
