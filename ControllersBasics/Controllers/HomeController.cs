@@ -11,6 +11,8 @@ namespace ControllersBasics.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Head = "fruits";
+            ViewBag.Fruits = new string[] { "pear", "peach", "apple" }; 
             return View();
         }
 

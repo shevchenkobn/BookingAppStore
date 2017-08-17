@@ -1,6 +1,13 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<h1>@ViewBag.Head</h1>
+<ul>
+    @foreach(var s in ViewBag.Fruits)
+    {
+        <li>@s</li>
+    }
+</ul>
 
 <div class="jumbotron">
     <h1>ASP.NET</h1>
