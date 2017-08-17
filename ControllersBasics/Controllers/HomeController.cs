@@ -40,9 +40,9 @@ namespace ControllersBasics.Controllers
 
         public ContentResult Square(int a = 3, int h = 10)
         {
-            return Content($"Square of triangle (a = {a} and h = {h} is {a * h / 2}");
+            return Content($"Square of triangle (a = {a} and h = {h}) is {a * h / 2}");
         }
-        public ContentResult Square()
+        public ContentResult SquareNoParams()
         {
             int.TryParse(Request.Params["a"], out int a);
             int.TryParse(Request.Params["h"], out int h);
@@ -55,9 +55,13 @@ namespace ControllersBasics.Controllers
             return View();
         }
 
-        public void GetVoid()
+        public ActionResult GetVoid(int i = 3)
         {
-            
+            if (i <= 3)
+                return HttpNotFound();
+                //return new HttpStatusCodeResult(404);
+                //return RedirectToAction("Square", "Home", new { a = 5, h = 6 });
+            return View("About");
         }
 
         [HttpPost]
