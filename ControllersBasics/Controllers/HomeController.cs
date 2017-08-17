@@ -11,9 +11,22 @@ namespace ControllersBasics.Controllers
     {
         public ActionResult Index()
         {
+            HttpContext.Response.Cookies["id"].Value = "some_random_id";
+            Session["name"] = "tom lee";
             ViewBag.Head = "fruits";
             ViewBag.Fruits = new string[] { "pear", "peach", "apple" }; 
             return View();
+        }
+
+        public ContentResult GetData()
+        {
+            bool isAdmin = HttpContext.User.IsInRole("admin");
+            bool isAuthorized = HttpContext.User.Identity.IsAuthenticated;
+            string login = HttpContext.User.Identity.Name;
+            HttpContext.Response.Charset = "utf8";
+            //HttpContext.Response.AddHeader
+            return Content(HttpContext.Request.Cookies["id"].Value + " " + HttpContext.Response.Cookies["id"].Value + 
+                Session["name"]);
         }
 
         public FilePathResult GetFile()
@@ -22,6 +35,19 @@ namespace ControllersBasics.Controllers
             string fileType = "application/pdf";
             string fileName = "you_will_never_know_the_name.pdf";
             return File(filePath, fileType, fileName);
+        }
+
+        public ContentResult GetContext()
+        {
+            HttpContext.Response.Write(Request == HttpContext.Request);
+            HttpContext.Response.Write(Response == HttpContext.Response);
+            string browser = HttpContext.Request.Browser.Browser;
+            string user_agent = HttpContext.Request.UserAgent;
+            string url = HttpContext.Request.RawUrl;
+            string ip = HttpContext.Request.UserHostAddress;
+            string referrer = HttpContext.Request.UrlReferrer == null ? "" : HttpContext.Request.UrlReferrer.AbsoluteUri;
+            return Content("<p>Browser: " + browser + "</p><p>User-Agent: " + user_agent + "</p><p>Url запроса: " + url +
+                "</p><p>Реферер: " + referrer + "</p><p>IP-адрес: " + ip + "</p>");
         }
 
         public FileContentResult GetBytes()
