@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ControllersBasics.Util;
 
 namespace ControllersBasics.Controllers
 {
@@ -20,6 +21,16 @@ namespace ControllersBasics.Controllers
             return View();
         }
 
+        public ActionResult GetHtml(string html = "")
+        {
+            return new HtmlResult(html == "" ? "<h1>Empty html</h1>" : html);
+        }
+
+        public ActionResult GetImage()
+        {
+            return new ImageResult("/Content/Images/image.png");
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -27,11 +38,11 @@ namespace ControllersBasics.Controllers
             return View();
         }
 
-        public string Square(int a = 3, int h = 10)
+        public ContentResult Square(int a = 3, int h = 10)
         {
-            return $"Square of triangle (a = {a} and h = {h} is {a * h / 2}";
+            return Content($"Square of triangle (a = {a} and h = {h} is {a * h / 2}");
         }
-        public string Square()
+        public ContentResult Square()
         {
             int.TryParse(Request.Params["a"], out int a);
             int.TryParse(Request.Params["h"], out int h);
@@ -42,6 +53,11 @@ namespace ControllersBasics.Controllers
         public ActionResult GetBook()
         {
             return View();
+        }
+
+        public void GetVoid()
+        {
+            
         }
 
         [HttpPost]
