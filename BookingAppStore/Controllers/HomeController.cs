@@ -14,9 +14,8 @@ namespace BookingAppStore.Controllers
         public ActionResult Index()
         {
             var books = db.Books;
-            
-            ViewBag.Books = books;
-            return View();
+            //ViewBag.Books = books;
+            return View("ListView", books);
         }
 
         [HttpGet]
