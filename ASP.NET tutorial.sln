@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingAppStore", "BookingA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllersBasics", "ControllersBasics\ControllersBasics.csproj", "{9694FD27-CE46-45FB-A1F5-26CCDFB89CD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncTaskApp", "AsyncTaskApp\AsyncTaskApp.csproj", "{E0943A3A-1BB8-4B0C-9EB0-DCBE07C431FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewBasics", "ViewBasics\ViewBasics.csproj", "{0BE876E6-8136-4F9D-9115-AA4A8209BE01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{9694FD27-CE46-45FB-A1F5-26CCDFB89CD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9694FD27-CE46-45FB-A1F5-26CCDFB89CD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9694FD27-CE46-45FB-A1F5-26CCDFB89CD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0943A3A-1BB8-4B0C-9EB0-DCBE07C431FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0943A3A-1BB8-4B0C-9EB0-DCBE07C431FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0943A3A-1BB8-4B0C-9EB0-DCBE07C431FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0943A3A-1BB8-4B0C-9EB0-DCBE07C431FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BE876E6-8136-4F9D-9115-AA4A8209BE01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE876E6-8136-4F9D-9115-AA4A8209BE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE876E6-8136-4F9D-9115-AA4A8209BE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE876E6-8136-4F9D-9115-AA4A8209BE01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
