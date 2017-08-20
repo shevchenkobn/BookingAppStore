@@ -11,11 +11,19 @@ namespace BookingAppStore.Controllers
     public class HomeController : Controller
     {
         BookContext db = new BookContext();
-        public ActionResult Index()
+        public ActionResult Index(string arg = "")
         {
             var books = db.Books;
             //ViewBag.Books = books;
-            return View("ListView", books);
+            if (arg.Length == 0)
+                return View("ListView", books);
+            else
+                return View(books);
+        }
+        public ActionResult GetList()
+        {
+            ViewBag.Message = "This is partial view";
+            return PartialView();
         }
 
         [HttpGet]

@@ -2,6 +2,7 @@
 @model IEnumerable<Book>
 @{
     ViewBag.Title = "Book shop";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 <div class="container">
     <h2>Books sales off</h2>
@@ -22,3 +23,6 @@
         }
     </table>
 </div>
+@section Footer {
+I'm customizable footer
+}
