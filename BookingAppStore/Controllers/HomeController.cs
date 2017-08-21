@@ -15,6 +15,8 @@ namespace BookingAppStore.Controllers
         {
             var books = db.Books;
             //ViewBag.Books = books;
+            var authors = new SelectList(books, "Author", "Name");
+            ViewBag.Authors = authors;
             if (id.Length < 0 && id[0] == 'l')
                 return View("ListView", books);
             else
@@ -24,6 +26,11 @@ namespace BookingAppStore.Controllers
         {
             ViewBag.Message = "This is partial view";
             return PartialView(new string[] { "The UK", "The USA", "Russia", "China" });
+        }
+
+        public string GetForm(string[] states)
+        {
+            return String.Join(", ", states);
         }
 
         [HttpGet]

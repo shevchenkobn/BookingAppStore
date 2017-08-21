@@ -23,7 +23,22 @@
         }
     </table>
 </div>
-@Html.Action("GetList");
+@using (Html.BeginForm("GetForm", "Home", FormMethod.Post))
+{
+    @*@Html.DropDownList("author", ViewBag.Authors as SelectList)*@
+    @Html.ListBox("states", new MultiSelectList(new string[] { "The UK", "The USA", "Ukraine", "Russia" }))
+    @*@Html.CheckBox("set", false)*@
+    @*@Html.RadioButton("color", "red")
+    <span>Red</span>
+    @Html.RadioButton("color", "blue")
+    <span>Blue</span>
+    @Html.RadioButton("color", "green", true)
+    <span>Green</span>*@
+
+    @*@Html.TextArea("text", "hello world", 5, 50, null)*@
+    <input type="submit" value="Send" />
+}
+@*@Html.Action("GetList");*@
 
 @*@Html.Partial("GetList", new string[] { "The UK", "The USA", "Russia", "China" })*@
 
