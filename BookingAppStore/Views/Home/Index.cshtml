@@ -23,6 +23,13 @@
         }
     </table>
 </div>
+@Html.Action("GetList");
+
+@*@Html.Partial("GetList", new string[] { "The UK", "The USA", "Russia", "China" })*@
+
+@*below one is quicker*@
+@*@{Html.RenderPartial("GetList");}*@
+
 @section Footer {
 I'm customizable footer
 }

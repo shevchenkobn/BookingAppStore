@@ -23,7 +23,7 @@ namespace BookingAppStore.Controllers
         public ActionResult GetList()
         {
             ViewBag.Message = "This is partial view";
-            return PartialView();
+            return PartialView(new string[] { "The UK", "The USA", "Russia", "China" });
         }
 
         [HttpGet]
