@@ -5,4 +5,19 @@
             <li>@str</li>
         }
     </ul>
+@helper StringList(IEnumerable<string> list)
+    {
+    <ul>
+        @foreach (var str in list)
+        {
+            <li>@str</li>
+        }
+    </ul>
+    }
+<h3>Some list</h3>
+@StringList(Model)
+
+<h3>And same shit with extension method</h3>
+@using BookingAppStore.Helpers;
+@Html.CreateList(Model.ToArray())
 <h2>@ViewBag.Message</h2>

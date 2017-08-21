@@ -11,11 +11,11 @@ namespace BookingAppStore.Controllers
     public class HomeController : Controller
     {
         BookContext db = new BookContext();
-        public ActionResult Index(string arg = "")
+        public ActionResult Index(string id = "")
         {
             var books = db.Books;
             //ViewBag.Books = books;
-            if (arg.Length == 0)
+            if (id.Length < 0 && id[0] == 'l')
                 return View("ListView", books);
             else
                 return View(books);
