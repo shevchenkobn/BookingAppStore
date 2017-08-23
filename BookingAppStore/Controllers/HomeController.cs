@@ -71,6 +71,70 @@ namespace BookingAppStore.Controllers
 
             return View();
         }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Book book)
+        {
+            db.Books.Add(book);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        //public ActionResult Delete(int id = 0)
+        //{
+        //    var book = db.Books.Find(id);
+        //    if (book != null)
+        //    {
+        //        db.Books.Remove(book);
+        //        db.SaveChanges();
+        //    }
+
+        //    //db.Entry(new Book { Id = id }).State = System.Data.Entity.EntityState.Deleted;
+        //    //db.SaveChanges();
+
+        //    return RedirectToAction("Index");
+        //}
+        [HttpGet]
+        public ActionResult Delete(int id = 0)
+        {
+            var book = db.Books.Find(id);
+            if (book == null)
+                return HttpNotFound();
+            return View(book);
+        }
+        [HttpPost,ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            var book = db.Books.Find(id);
+            if (book != null)
+            {
+                db.Books.Remove(book);
+                db.SaveChanges();
+            }
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+                return HttpNotFound();
+            var book = db.Books.Find(id);
+            if (book == null)
+                return HttpNotFound();
+            return View(book);
+        }
+        [HttpPost]
+        public ActionResult Edit(Book book)
+        {
+            db.Entry(book).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
 
         protected override void Dispose(bool disposing)
         {
