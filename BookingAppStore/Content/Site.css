@@ -5,6 +5,10 @@
     padding-left: 40px;
 }
 
+.container.body-content {
+    padding-top: 50px;
+}
+
 nav {
     display: block;
 }

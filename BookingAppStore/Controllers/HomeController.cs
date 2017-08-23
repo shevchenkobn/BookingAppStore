@@ -37,7 +37,8 @@ namespace BookingAppStore.Controllers
         public ActionResult Buy(int id)
         {
             ViewBag.BookId = id;
-            return View();
+            var purchase = new Purchase { BookId = id, Person = "Unknown" };
+            return View(purchase);
         }
 
         [HttpPost]
