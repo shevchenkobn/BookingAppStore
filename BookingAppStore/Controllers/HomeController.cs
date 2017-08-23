@@ -28,6 +28,14 @@ namespace BookingAppStore.Controllers
             return PartialView(new string[] { "The UK", "The USA", "Russia", "China" });
         }
 
+        public ActionResult GetBook(int id)
+        {
+            var book = db.Books.Find(id);
+            if (book == null)
+                return HttpNotFound();
+            return View(book);
+        }
+
         public string GetForm(string[] states)
         {
             return String.Join(", ", states);
