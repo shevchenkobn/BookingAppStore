@@ -35,11 +35,52 @@ namespace NavigationApp.Controllers
             return View(team);
         }
 
-        //[HttpGet]
-        //public ActionResult Create()
-        //{
+        [HttpGet]
+        public ActionResult Create()
+        {
+            ViewBag.Teams = new SelectList(db.Teams, "Id", "Name");
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Player player)
+        {
+            db.Players.Add(player);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
-        //}
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var player = db.Players.Find(id);
+            if (player == null)
+                return HttpNotFound();
+            ViewBag.Teams = new SelectList(db.Teams, "Id", "Name", player.TeamId);
+            return View(player);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Player player)
+        {
+            db.Entry(player).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            var player = db.Players.Find(id);
+            if (player == null)
+                return HttpNotFound();
+            db.Entry(player).State = EntityState.Deleted;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
         public ActionResult Contact()
         {
