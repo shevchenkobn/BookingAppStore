@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewBasics", "ViewBasics\Vi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavigationApp", "NavigationApp\NavigationApp.csproj", "{4493647C-FBAF-4DCB-B633-F4BD621A9272}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManyToManyApp", "ManyToManyApp\ManyToManyApp.csproj", "{6153AD8B-432F-419F-8868-C7096E164012}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4493647C-FBAF-4DCB-B633-F4BD621A9272}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4493647C-FBAF-4DCB-B633-F4BD621A9272}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4493647C-FBAF-4DCB-B633-F4BD621A9272}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6153AD8B-432F-419F-8868-C7096E164012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6153AD8B-432F-419F-8868-C7096E164012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6153AD8B-432F-419F-8868-C7096E164012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6153AD8B-432F-419F-8868-C7096E164012}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
